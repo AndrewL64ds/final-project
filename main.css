@@ -8,10 +8,10 @@ body {
    font-family: "Press Start 2P", system-ui;
    font-weight: 400;
    font-style: normal;
-   background-color: rgba(0, 0, 0, 0.3);
+   background-color: rgba(0, 0, 0, 0.4);
    color: white;
    margin: auto;
-   width: 85%;
+   max-width: 1200px; /* limiting the width prevents everything from getting too big on large monitors */
 }
 
 main {
@@ -20,6 +20,8 @@ main {
 
 img {
    image-rendering: pixelated;
+   max-width: 100%;
+   height: auto;
 }
 
 .onescreenshot {
@@ -161,21 +163,34 @@ footer a {
 }
 footer a:hover {color: green;}
 
-.character, .secretcharacter {
+.character, 
+.secretcharacter {
    display: grid;
-   grid-template-columns: 1fr 2fr;
-   grid-template-rows: 3fr 1fr;
-   grid-gap: 1rem;
-   margin-bottom: 1rem;
+   align-items: center;
+   grid-template-columns: 1fr 3fr;
+   gap: 2rem;
+   margin-bottom: 3rem;
+}
+
+/* Character bios */
+.character-info {
+
+}
+
+/* Character's name */
+.character-info h2 {
+  font-size: 200%;
+  margin-bottom: 1.5rem;
 }
 
 .history {
    font-size: 75%;
    grid-column: 2/3;
-   text-align: center;
+   /* text-align: center; */
 }
 
-.character ul,.secretcharacter ul {
+.character ul,
+.secretcharacter ul {
    font-size: 75%;
    grid-column: 2/3;
    text-align: center;
@@ -184,30 +199,42 @@ footer a:hover {color: green;}
    justify-content: space-around;
 }
 
-.character li,.secretcharacter li {
+.character li,
+.secretcharacter li {
    list-style-type: none;
    padding: 1rem;
 }
 
-.character img,.secretcharacter img {
-   width: 65%;
+.character img,
+.secretcharacter img {
+   width: 90%;
    background-color: black;
    padding: 10px;
    border: 5px white solid;
    border-radius: 1rem;
-   margin: auto;
-   grid-row: 1/3;
+   /* margin: 1rem; */
+   /* grid-row: 1/3; */
 }
 
-.character p,.secretcharacter p {
-   text-align: center;
+.character p,
+.secretcharacter p {
+   /* text-align: center; */
+   /* left aligned text is easier to read */
+   line-height: 1.6;
 }
 
 .drawer {
    border: white 4px solid;
-   margin-bottom: 1rem;
+   margin-bottom: 3rem;
    padding: 4px;
+   cursor: pointer; /* cursor is now clickable hand */
 }
+
+.drawer:hover {
+  background-color: rgba(101, 100, 100, 0.354);
+  /* color: black; */
+}
+
 .drawer h3 {
    font-size: 110%;
    display: block;
