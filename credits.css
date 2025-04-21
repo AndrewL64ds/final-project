@@ -1,15 +1,22 @@
 body {
-   background-color: darkorange;
+   background-color: black;
+   background-image: url(images/creditsbg.png);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: 1920px;
+   background-position-x: center;
+   image-rendering: pixelated;
    color: white;
    text-align: center;
    font-family: "Press Start 2P", system-ui;
+   font-size: 100%;
    text-shadow: 2px 2px black;
 }
 
 .wrapper {
    max-width: 720px;
    margin: auto;
-   padding: 1rem;
+   padding: 4rem;
 }
 
 section {
@@ -31,4 +38,10 @@ a:hover {
    color: green;
 }
 
-section {}
+@media only screen and (max-width: 480px) {
+   body {
+      font-size: 150%;
+      text-shadow: 3px 3px black;
+      line-height: 1.1;
+   }
+}

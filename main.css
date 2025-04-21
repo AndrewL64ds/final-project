@@ -96,6 +96,14 @@ p {
    font-size: 75%;
 }
 
+.note a {
+   color: gray;
+}
+
+.note a:hover {
+   color: darkgreen;
+}
+
 h1 {
    font-size: 200%;
    text-align: center;
@@ -168,31 +176,24 @@ footer a:hover {color: green;}
    display: grid;
    align-items: center;
    grid-template-columns: 1fr 3fr;
-   gap: 2rem;
+   gap: 3rem;
    margin-bottom: 3rem;
 }
 
 /* Character bios */
 .character-info {
-
+   grid-column: 2/3;
 }
 
 /* Character's name */
 .character-info h2 {
   font-size: 200%;
-  margin-bottom: 1.5rem;
-}
-
-.history {
-   font-size: 75%;
-   grid-column: 2/3;
-   /* text-align: center; */
+  margin-bottom: 1rem;
 }
 
 .character ul,
 .secretcharacter ul {
-   font-size: 75%;
-   grid-column: 2/3;
+   font-size: 65%;
    text-align: center;
    display: flex;
    flex-direction: row;
@@ -207,31 +208,28 @@ footer a:hover {color: green;}
 
 .character img,
 .secretcharacter img {
-   width: 90%;
+   width: 100%;
    background-color: black;
    padding: 10px;
    border: 5px white solid;
    border-radius: 1rem;
-   /* margin: 1rem; */
-   /* grid-row: 1/3; */
+   margin: auto;
 }
 
 .character p,
 .secretcharacter p {
-   /* text-align: center; */
-   /* left aligned text is easier to read */
-   line-height: 1.6;
+   line-height: 1.5;
 }
 
 .drawer {
    border: white 4px solid;
    margin-bottom: 3rem;
    padding: 4px;
-   cursor: pointer; /* cursor is now clickable hand */
+   cursor: pointer;
 }
 
 .drawer:hover {
-  background-color: rgba(101, 100, 100, 0.354);
+  background-color: rgba(101, 100, 100, 0.35);
   /* color: black; */
 }
 
@@ -264,8 +262,7 @@ footer a:hover {color: green;}
    padding: 1rem;
 }
 
-.download a {
-   grid-column: 2;
+.dlbutton {
    display: block;
    color: white;
    background-color: black;
@@ -277,8 +274,16 @@ footer a:hover {color: green;}
    text-decoration: none;
 }
 
-.download a:hover {
+.dlbutton:hover {
    background-color: green;
+}
+
+.dldescription a {
+   color: gray;
+}
+
+.dldescription a:hover {
+   color: darkgreen;
 }
 
 
@@ -297,18 +302,23 @@ footer a:hover {color: green;}
 
    .character {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 0.25fr 0.25fr;
+      grid-template-rows: 0.5fr 1fr;
    }
 
    .secretcharacter {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr .5fr;
+      grid-template-rows: 1fr 0.25fr;
    }
 
    .character img,.secretcharacter img {
       grid-row: 1;
       grid-column: 1;
-      width: 200px;
+      width: 300px;
+      margin: auto;
+   }
+
+   .character h2 {
+      text-align: center;
    }
 
    .character p,.secretcharacter p {
@@ -320,6 +330,30 @@ footer a:hover {color: green;}
    .character ul,.secretcharacter ul {
       grid-row: 3;
       grid-column: 1;
+   }
+
+   .download {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 0.5fr 0.25fr;
+   }
+
+   .download img {
+      grid-row: 1/2;
+      max-width: 50%;
+   }
+
+   .download div {
+      grid-row: 2/3;
+   }
+
+   .download p {
+      text-align: center;
+      margin: auto;
+   }
+
+   .download a {
+      grid-row: 3/4;
+      grid-column: 1/2;
    }
 }
 
@@ -349,6 +383,7 @@ footer a:hover {color: green;}
 
    p {
       text-align: center;
+      line-height: 1.4;
    }
    
    h2 {
@@ -358,10 +393,14 @@ footer a:hover {color: green;}
    .threescreenshots {
       grid-template-columns: 1fr;
    }
+
+   .onescreenshot {
+      max-width: 90%;
+   }
    
    .character {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr .5fr 0.5fr;
+      grid-template-rows: 0.5fr 1fr;
    }
 
    .secretcharacter {
@@ -373,7 +412,7 @@ footer a:hover {color: green;}
       width: 300px;
    }
 
-   .character p,.secretcharacter p {
+   .character-info {
       grid-row: 2;
       grid-column: 1;
       text-align: center;
@@ -383,6 +422,10 @@ footer a:hover {color: green;}
       grid-row: 3;
       grid-column: 1;
       flex-direction: column;
+   }
+
+   .drawer h3 {
+      text-align: center;
    }
 
    .download {
@@ -396,4 +439,21 @@ footer a:hover {color: green;}
    .download a {
       grid-column: 1;
    }
+
+   .download img {
+      max-width: 150%;
+   }
+
+   footer {
+      grid-template-columns: 1fr;
+   }
+
+   .footerLeft {
+      display: none;
+   }
+
+   .footerRight {
+      grid-column: 1;
+   }
+
 }
